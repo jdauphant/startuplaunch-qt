@@ -3,11 +3,11 @@
 # Project created by QtCreator 2013-09-17T15:14:20
 #
 #-------------------------------------------------
-release: {
-DEFAULT_SUBDIR = release
-}
-else: debug: {
+CONFIG(debug, debug|release) {
      DEFAULT_SUBDIR = debug
+}
+else: {
+     DEFAULT_SUBDIR = release
 }
 DESTDIR = $$PWD/../lib/$$DEFAULT_SUBDIR
 
