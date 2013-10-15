@@ -7,7 +7,7 @@ StartupLaunch::StartupLaunch()
 }
 
 
-bool StartupLaunch::addOnStartup(QString name, QString executable, QString comments)
+bool StartupLaunch::addOnStartup(QString name, QString executable, QString)
 {
     QString autostartPath = QDesktopServices::storageLocation(QDesktopServices::HomeLocation)+"/Library/LaunchAgents";
     if(false==QDir().exists(autostartPath))
@@ -46,6 +46,6 @@ bool StartupLaunch::removeFromStartup(QString name)
 
 bool StartupLaunch::isOnStartup(QString name)
 {
-    return QFile::exists(QDesktopServices::storageLocation(QDesktopServices::HomeLocation)+QString("/Library/LaunchAgents/")+name.toLower()+QString(".desktopplist"));
+    return QFile::exists(QDesktopServices::storageLocation(QDesktopServices::HomeLocation)+QString("/Library/LaunchAgents/")+name.toLower()+QString(".plist"));
 }
 
